@@ -37,6 +37,9 @@ Example usage::
 
     # To export the model to TensorRT format (requires TensorRT installed):
     model.export(format="tensorrt")
+
+    # To train on a custom dataset (COCO format expected):
+    model.train(dataset_dir="/path/to/dataset", epochs=50)
 """
 
 from rfdetr.main import RFDETRBase, RFDETRLarge
@@ -44,3 +47,8 @@ from rfdetr.main import RFDETRBase, RFDETRLarge
 __version__ = "1.0.0"
 __author__ = "Roboflow Inc."
 __all__ = ["RFDETRBase", "RFDETRLarge"]
+
+# Default confidence threshold used across predict() calls.
+# Lowering this value (e.g. 0.3) surfaces more low-confidence detections,
+# which can be useful during dataset exploration or debugging.
+DEFAULT_THRESHOLD = 0.5
