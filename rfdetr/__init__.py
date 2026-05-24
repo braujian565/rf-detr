@@ -24,6 +24,13 @@ Example usage::
 
     model = RFDETRBase()
     detections = model.predict("image.jpg")
+
+    # To predict with a custom confidence threshold:
+    detections = model.predict("image.jpg", threshold=0.4)
+
+    # To use the larger model variant for better accuracy:
+    from rfdetr import RFDETRLarge
+    model = RFDETRLarge()
 """
 
 from rfdetr.main import RFDETRBase, RFDETRLarge
