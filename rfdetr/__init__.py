@@ -34,6 +34,9 @@ Example usage::
 
     # To export the model to ONNX format:
     model.export(format="onnx")
+
+    # To export the model to TensorRT format (requires TensorRT installed):
+    model.export(format="tensorrt")
 """
 
 from rfdetr.main import RFDETRBase, RFDETRLarge
