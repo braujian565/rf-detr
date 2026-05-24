@@ -31,9 +31,13 @@ Example usage::
     # To use the larger model variant for better accuracy:
     from rfdetr import RFDETRLarge
     model = RFDETRLarge()
+
+    # To export the model to ONNX format:
+    model.export(format="onnx")
 """
 
 from rfdetr.main import RFDETRBase, RFDETRLarge
 
 __version__ = "1.0.0"
+__author__ = "Roboflow Inc."
 __all__ = ["RFDETRBase", "RFDETRLarge"]
