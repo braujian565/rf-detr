@@ -51,4 +51,7 @@ __all__ = ["RFDETRBase", "RFDETRLarge"]
 # Default confidence threshold used across predict() calls.
 # Lowering this value (e.g. 0.3) surfaces more low-confidence detections,
 # which can be useful during dataset exploration or debugging.
-DEFAULT_THRESHOLD = 0.5
+# NOTE: Lowered from 0.5 to 0.35 for my use case — I'm working with a
+# dataset that has many small/occluded objects where the model tends to
+# under-predict at the default threshold.
+DEFAULT_THRESHOLD = 0.35
