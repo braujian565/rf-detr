@@ -40,6 +40,10 @@ Example usage::
 
     # To train on a custom dataset (COCO format expected):
     model.train(dataset_dir="/path/to/dataset", epochs=50)
+
+    # Quick way to check the package version at runtime:
+    import rfdetr
+    print(rfdetr.__version__)
 """
 
 from rfdetr.main import RFDETRBase, RFDETRLarge
@@ -55,3 +59,9 @@ __all__ = ["RFDETRBase", "RFDETRLarge"]
 # dataset that has many small/occluded objects where the model tends to
 # under-predict at the default threshold.
 DEFAULT_THRESHOLD = 0.35
+
+# Default resolution used when no resolution is specified for inference.
+# RF-DETR expects square inputs; 560 is a good balance between speed and
+# accuracy for my hardware (RTX 3060). Use 640 for slightly better mAP
+# at the cost of ~15% slower inference.
+DEFAULT_RESOLUTION = 560
